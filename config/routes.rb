@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  get 'about/index'
+
   get 'votes/create'
   get 'stories/index'
   get 'stories/show'
+
+  get 'members', to: 'members#index'
 
   resources :stories do
     resources :votes, only: [:create]
